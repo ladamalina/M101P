@@ -17,8 +17,6 @@ try:
                  min_hw_score = score['score']
         if min_hw_score < 101:
             collection.update({'_id': item['_id']}, {'$pull': {'scores': {'score': min_hw_score}}})
-        print item
-        print collection.find_one({'_id': item['_id']})
 except:
     print "Error:", sys.exc_info()
 
